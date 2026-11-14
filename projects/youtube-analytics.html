@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>YouTube Marketing Analytics · [Your Name]</title>
+  <meta name="description" content="An automated weekly pipeline that collects YouTube marketing data, checks it with 56 quality tests and feeds a Looker Studio dashboard.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="container">
+  <nav class="nav" aria-label="Main">
+    <a class="nav__brand" href="../">[Your Name]</a>
+    <div class="nav__links">
+      <a href="../#projects">Projects</a>
+      <a href="../#about">About</a>
+      <a href="https://github.com/mhdkerol">GitHub ↗</a>
+    </div>
+  </nav>
+
+  <main id="main">
+    <a class="back" href="../#projects">← All projects</a>
+
+    <header class="page-hero">
+      <div class="chips">
+        <span class="chip chip--accent">Data Engineering</span>
+        <span class="chip">SQL</span>
+        <span class="chip">Python</span>
+      </div>
+      <h1>YouTube Marketing Analytics</h1>
+      <p class="hero__lead">An automated system that collects data on marketing videos from YouTube every week, cleans and checks it, and feeds a dashboard showing which videos and channels perform best.</p>
+      <div class="btn-row">
+        <a class="btn btn--primary" href="https://github.com/mhdkerol/youtube-analytics-API">See the code on GitHub ↗</a>
+        <a class="btn" href="https://datastudio.google.com/reporting/b1613135-f59a-499a-954f-48be1660cb7e/page/0UbvF">Open the live dashboard ↗</a>
+      </div>
+      <p class="status"><strong>Project status: paused.</strong> Built in April 2026 and ran on a weekly schedule until June 2026, when the Google Cloud free trial ended. The dashboard still works and shows data up to the last successful run on 3 June 2026.</p>
+    </header>
+
+    <section class="section">
+      <div class="stats">
+        <div class="stat"><span class="stat__num stat__num--accent">56 / 56</span><span class="stat__label">quality checks passing</span></div>
+        <div class="stat"><span class="stat__num">5</span><span class="stat__label">types of YouTube data</span></div>
+        <div class="stat"><span class="stat__num">30</span><span class="stat__label">marketing topics tracked</span></div>
+        <div class="stat"><span class="stat__num">11</span><span class="stat__label">data models</span></div>
+      </div>
+    </section>
+
+    <section class="section prose">
+      <h2>The question</h2>
+      <p>Marketing content on YouTube is crowded. I wanted to answer: which marketing videos get the most engagement, what do they have in common (length, captions, posting time, tags), and how are the channels behind them growing over time?</p>
+      <p>Answering that once is easy. Answering it every week, with data you can trust, needs a proper system. That system is what this project is about.</p>
+    </section>
+
+    <section class="section">
+      <div class="prose" style="margin-bottom: 24px">
+        <h2>How it works</h2>
+        <p>Data flows left to right. Every step runs automatically each week.</p>
+      </div>
+      <figure>
+        <img src="../assets/img/architecture.png" alt="Architecture diagram: YouTube Data API and a Python script collect data, which is stored in Google Cloud Storage and BigQuery, cleaned and modelled in three dbt layers, and shown in Looker Studio. GitHub Actions automates the whole flow weekly." loading="lazy">
+        <figcaption>The full pipeline. GitHub Actions runs it weekly, stops early if a check fails, and emails an alert.</figcaption>
+      </figure>
+      <div class="steps" style="margin-top: 24px">
+        <div class="step"><span class="step__n">1 · COLLECT</span>A Python script searches YouTube for 30 marketing topics and pulls video, channel and comment details.</div>
+        <div class="step"><span class="step__n">2 · STORE</span>Raw data is saved untouched in Google Cloud, one dated folder per run, so nothing is ever lost.</div>
+        <div class="step"><span class="step__n">3 · CLEAN &amp; CHECK</span>dbt removes duplicates, fixes data types and runs 56 automatic tests before building the final tables.</div>
+        <div class="step"><span class="step__n">4 · REPORT</span>A 3-page Looker Studio dashboard covers the market, video performance and channels.</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="prose" style="margin-bottom: 24px">
+        <h2>The result</h2>
+        <p>A dashboard that reads from clean, tested tables, so the numbers can be trusted.</p>
+      </div>
+      <figure>
+        <img src="../assets/img/dashboard.png" alt="Screenshot of the YouTube Analytics dashboard in Looker Studio" loading="lazy">
+        <figcaption>Looker Studio dashboard: market landscape, what drives video performance, and channel insights.</figcaption>
+      </figure>
+    </section>
+
+    <section class="section">
+      <div class="prose" style="margin-bottom: 24px">
+        <h2>Key decisions</h2>
+        <p>The choices that make this a reliable system rather than a one-off script.</p>
+      </div>
+      <div class="decisions">
+        <div class="decision"><h3>Keep the raw data</h3><p>Raw data is stored first and never edited. If a rule changes later, everything can be rebuilt from the original data.</p></div>
+        <div class="decision"><h3>Check before publishing</h3><p>Quality tests run before the final tables are built. Bad data stops the run instead of reaching the dashboard.</p></div>
+        <div class="decision"><h3>Track history</h3><p>Channel stats like subscribers change. The system keeps every version, so growth over time can be measured.</p></div>
+        <div class="decision"><h3>Simple, reusable tables</h3><p>Final data is organised as a star schema: 3 fact tables and 3 lookup tables that any BI tool can use.</p></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="prose" style="margin-bottom: 24px">
+        <h2>Code highlights</h2>
+        <p>A few short excerpts, each with what it does in plain English. The complete code is on GitHub.</p>
+      </div>
+
+      <div class="snippet">
+        <div class="snippet__head">
+          <h3>Never load the same day twice</h3>
+          <a href="https://github.com/mhdkerol/youtube-analytics-API/blob/main/ingestion/load_gcs_to_bigquery.py">Full file ↗</a>
+        </div>
+        <p class="snippet__why">Before loading new data, the script checks whether today's data is already in the warehouse. If it is, it skips it, so re-running the pipeline never creates duplicates.</p>
+        <div class="snippet__file">ingestion/load_gcs_to_bigquery.py · Python</div>
+<pre><code class="language-python">check_query = f"""
+    SELECT COUNT(*) as count
+    FROM `{table_id}`
+    WHERE DATE(_PARTITIONTIME) = CURRENT_DATE()
+"""
+
+result = client.query(check_query).result()
+count = next(result).count
+
+if count &gt; 0:
+    print(f"Skipping {table_name} - already loaded today")
+    continue
+
+load_job = client.load_table_from_uri(gcs_uri, table_id, job_config=job_config)</code></pre>
+      </div>
+
+      <div class="snippet">
+        <div class="snippet__head">
+          <h3>Turning raw counts into business metrics</h3>
+          <a href="https://github.com/mhdkerol/youtube-analytics-API/blob/main/transformation/youtube_analytics/models/gold/fct_video_performance.sql">Full file ↗</a>
+        </div>
+        <p class="snippet__why">Engagement rate = (likes + comments) ÷ views. <code>SAFE_DIVIDE</code> returns an empty value instead of crashing when a video has zero views.</p>
+        <div class="snippet__file">models/gold/fct_video_performance.sql · SQL (dbt)</div>
+<pre><code class="language-sql">SAFE_DIVIDE(
+    videos.like_count + videos.comment_count,
+    videos.view_count
+)                                   AS engagement_rate,
+
+SAFE_DIVIDE(
+    videos.like_count,
+    videos.view_count
+)                                   AS like_to_view_ratio,
+
+DATE_DIFF(
+    CURRENT_DATE(),
+    DATE(videos.published_at),
+    DAY
+)                                   AS video_age_days</code></pre>
+      </div>
+
+      <div class="snippet">
+        <div class="snippet__head">
+          <h3>Grouping channels by size</h3>
+          <a href="https://github.com/mhdkerol/youtube-analytics-API/blob/main/transformation/youtube_analytics/models/gold/dim_channels.sql">Full file ↗</a>
+        </div>
+        <p class="snippet__why">Each channel gets a tier based on subscribers, so the dashboard can compare small creators with big ones fairly.</p>
+        <div class="snippet__file">models/gold/dim_channels.sql · SQL (dbt)</div>
+<pre><code class="language-sql">CASE
+    WHEN subscriber_count &gt;= 1000000 THEN 'Mega'
+    WHEN subscriber_count &gt;= 100000  THEN 'Macro'
+    WHEN subscriber_count &gt;= 10000   THEN 'Micro'
+    ELSE 'Nano'
+END                                 AS channel_tier</code></pre>
+      </div>
+
+      <div class="snippet">
+        <div class="snippet__head">
+          <h3>Keeping a history of every channel</h3>
+          <a href="https://github.com/mhdkerol/youtube-analytics-API/blob/main/transformation/youtube_analytics/snapshots/snp_youtube_channels.sql">Full file ↗</a>
+        </div>
+        <p class="snippet__why">When any of these columns change (subscribers, views and so on), dbt saves a new version instead of overwriting the old one. This is called "SCD Type 2" and it's what makes growth tracking possible.</p>
+        <div class="snippet__file">snapshots/snp_youtube_channels.sql · dbt snapshot</div>
+<pre><code class="language-sql">{% snapshot snp_youtube_channels %}
+{{
+    config(
+        unique_key='channel_id',
+        strategy='check',
+        check_cols=[
+            'subscriber_count',
+            'video_count',
+            'total_view_count',
+            'channel_name',
+            'country',
+            'keywords'
+        ],
+    )
+}}
+SELECT * FROM {{ ref('stg_youtube_channels') }}
+{% endsnapshot %}</code></pre>
+      </div>
+
+      <div class="snippet">
+        <div class="snippet__head">
+          <h3>Automation that stops on bad data</h3>
+          <a href="https://github.com/mhdkerol/youtube-analytics-API/blob/main/.github/workflows/youtube_pipeline.yml">Full file ↗</a>
+        </div>
+        <p class="snippet__why">The weekly job runs in a careful order: check the data is fresh, build and test the clean layer, and only then build the final tables. Any failure stops the run and triggers an email.</p>
+        <div class="snippet__file">.github/workflows/youtube_pipeline.yml · GitHub Actions (excerpt)</div>
+<pre><code class="language-yaml">- name: dbt source freshness
+  run: dbt source freshness
+
+- name: dbt run silver
+  run: dbt run -s silver
+
+- name: dbt test silver      # fail fast
+  run: dbt test -s silver
+
+- name: dbt snapshot
+  run: dbt snapshot
+
+- name: dbt run gold
+  run: dbt run -s gold
+
+- name: dbt test gold
+  run: dbt test -s gold
+
+- name: Send failure email
+  if: failure()</code></pre>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="prose" style="margin-bottom: 24px">
+        <h2>Data model</h2>
+        <p>How the final tables connect: each step of data refinement, and the star schema the dashboard reads from.</p>
+      </div>
+      <figure style="margin-bottom: 24px">
+        <img src="../assets/img/lineage.png" alt="dbt lineage graph showing data flowing from YouTube sources through staging models to fact and dimension tables and the dashboard" loading="lazy">
+        <figcaption>Data lineage: from the raw YouTube sources to the dashboard.</figcaption>
+      </figure>
+      <figure>
+        <img src="../assets/img/erd.png" alt="Entity relationship diagram of the star schema with three fact tables and three dimension tables" loading="lazy">
+        <figcaption>Star schema: 3 fact tables (videos, comments, searches) and 3 dimensions (channels, categories, dates).</figcaption>
+      </figure>
+    </section>
+
+    <section class="section prose">
+      <h2>Tools used</h2>
+      <ul>
+        <li><strong>Python</strong> to collect data from the YouTube Data API</li>
+        <li><strong>Google Cloud Storage</strong> to store the raw data</li>
+        <li><strong>BigQuery</strong> as the data warehouse</li>
+        <li><strong>dbt</strong> to clean, model, test and document the data</li>
+        <li><strong>GitHub Actions</strong> to run everything automatically every week</li>
+        <li><strong>Looker Studio</strong> for the dashboard</li>
+      </ul>
+    </section>
+
+    <section class="cta">
+      <div>
+        <h2>Want the technical details?</h2>
+        <p>Setup steps, every model, all 56 tests and full documentation are on GitHub.</p>
+      </div>
+      <a class="btn btn--primary" href="https://github.com/mhdkerol/youtube-analytics-API">Open the GitHub repo ↗</a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>© <span id="year">2026</span> [Your Name]</span>
+    <nav aria-label="Contact">
+      <a href="https://github.com/mhdkerol">GitHub</a>
+      <a href="#linkedin">LinkedIn</a>
+      <a href="#email">Email</a>
+    </nav>
+  </footer>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script>if (window.hljs) hljs.highlightAll();</script>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>
