@@ -314,3 +314,7 @@ td:first-child { color: var(--text); white-space: nowrap; }
 }
 .end-cta h2 { font-size: 22px; margin-bottom: 4px; }
 .end-cta p { color: var(--text-soft); }
+.cert-extra-title { margin: 18px 0 8px; font-size: 13px; color: var(--muted); }
+.cert-extra { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; font-size: 14px; color: var(--text-soft); }
+.cert-extra { gap: 10px; }
+.cert-extra span { display: block; font-size: 13px; color: var(--muted); }
