@@ -100,10 +100,10 @@
       <h2>Overview</h2>
       <div class="prose">
         <p>The project tracks marketing content on YouTube. It searches 30 marketing keywords, such as <em>content marketing</em>, <em>youtube seo tips</em> and <em>tiktok marketing tips</em>, and collects data from five API endpoints: search results (including each video's position in YouTube search), video details, channel details, comments and video categories.</p>
-        <p>I built it to cover a complete analytics workflow on live API data: scheduled ingestion, raw storage, layered dbt models, tests, documentation and a dashboard at the end. The questions behind the dashboard are simple ones: which videos and channels get the most engagement, what those videos have in common, and how channels change over time.</p>
+        <p>I built it around data collected directly from the YouTube Data API, covering the workflow from scheduled ingestion and raw storage to transformation, testing, documentation and a dashboard. The questions behind the dashboard are simple ones: which videos and channels get the most engagement, what those videos have in common, and how channels change over time.</p>
         <p>Most of the work is in the dbt layer. The dashboard is mainly there to show that the final tables are accurate and easy to query.</p>
       </div>
-      <p class="status-note"><strong>Status: paused.</strong> I built the project in April 2026, and it ran on a weekly schedule on a Google Cloud free trial. The last successful run was on 3 June 2026. Once the trial ended, the storage bucket was no longer accessible, so I paused the schedule. The BigQuery tables and the dashboard still show data from that last run.</p>
+      <p class="status-note"><strong>Status: paused since July 2026. Last successful run: 3 June 2026.</strong> I built the project in April 2026, and it ran on a weekly schedule on a Google Cloud free trial. Once the trial ended, the storage bucket was no longer accessible, so I paused the schedule. The BigQuery tables and the dashboard still show data from that last run.</p>
     </section>
 
     <!-- Architecture -->
