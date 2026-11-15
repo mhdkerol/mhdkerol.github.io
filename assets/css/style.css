@@ -133,6 +133,7 @@ code { font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; 
 .timeline { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }
 .timeline li { display: flex; flex-direction: column; padding-left: 16px; border-left: 2px solid var(--border); }
 .timeline li:first-child { border-left-color: var(--accent); }
+.timeline--plain li:first-child { border-left-color: var(--border); }
 .timeline strong { font-weight: 600; }
 .timeline span { font-size: 14px; color: var(--muted); }
 .plain-list { margin: 0; padding-left: 18px; color: var(--text-soft); }

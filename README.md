@@ -32,6 +32,6 @@ Push to the `main` branch. GitHub Pages (Settings → Pages → Deploy from a br
 
 ## Common edits
 
-- **Add the resume:** put the PDF in `assets/` (e.g. `assets/Khairul-Ikhwan-Resume.pdf`) and uncomment the resume button in the hero section of `index.html`.
+- **Update the resume:** replace `assets/Khairul-Ikhwan-Resume.pdf` with the new PDF (same file name).
 - **Add a logo:** add a `<symbol id="i-name">` to `assets/img/icons.svg`, then use `<svg class="icon"><use href="assets/img/icons.svg#i-name"></use></svg>`.
 - **Add a project:** copy the `<article class="feature">` block in `index.html` and `projects/youtube-analytics.html` as a starting point.
