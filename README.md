@@ -9,7 +9,6 @@ Senior Data Associate working across analytics and data engineering, based in Ku
 - **About and experience:** reporting, data quality, data validation and workflow automation with SQL and Python.
 - **Tech stack:** SQL, Python, dbt, BigQuery, Google Cloud Storage, GitHub Actions, Looker Studio, Google Sheets and Excel.
 - **Featured project:** [YouTube Marketing Analytics Pipeline](https://mhdkerol.github.io/projects/youtube-analytics.html). Python ingestion from the YouTube Data API, raw data in Google Cloud Storage, a tested dbt star schema in BigQuery, a Looker Studio dashboard, and a weekly schedule on GitHub Actions.
-- **Resume:** downloadable PDF.
 
 ## Contact
 
