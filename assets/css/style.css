@@ -318,3 +318,9 @@ td:first-child { color: var(--text); white-space: nowrap; }
 .cert-extra { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; font-size: 14px; color: var(--text-soft); }
 .cert-extra { gap: 10px; }
 .cert-extra span { display: block; font-size: 13px; color: var(--muted); }
+.availability {
+  display: inline-flex; align-items: center; gap: 8px; margin: 4px 0 16px;
+  padding: 6px 12px; border: 1px solid var(--border); border-radius: 999px;
+  font-size: 14px; color: var(--text-soft);
+}
+.availability span { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }

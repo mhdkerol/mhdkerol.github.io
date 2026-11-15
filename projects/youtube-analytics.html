@@ -66,7 +66,7 @@
           <svg class="icon icon--sm" aria-hidden="true"><use href="../assets/img/icons.svg#i-github"></use></svg>View the code on GitHub
         </a>
         <a class="btn" href="https://datastudio.google.com/reporting/b1613135-f59a-499a-954f-48be1660cb7e/page/0UbvF" target="_blank" rel="noopener">
-          Open the dashboard<svg class="icon icon--sm" aria-hidden="true"><use href="../assets/img/icons.svg#i-external"></use></svg>
+          Open the dashboard (data to 3 Jun 2026)<svg class="icon icon--sm" aria-hidden="true"><use href="../assets/img/icons.svg#i-external"></use></svg>
         </a>
       </div>
       <dl class="facts">
@@ -99,8 +99,8 @@
     <section class="p-section" id="overview">
       <h2>Overview</h2>
       <div class="prose">
-        <p>The project tracks marketing content on YouTube. It searches 30 marketing keywords, such as <em>content marketing</em>, <em>youtube seo tips</em> and <em>tiktok marketing tips</em>, and collects data from five API endpoints: search results, video details, channel details, comments and video categories.</p>
-        <p>The aim was to practise the full analytics engineering workflow on real data rather than a static CSV: scheduled ingestion, raw storage, layered dbt models, tests, documentation and a dashboard at the end. The questions behind the dashboard are simple ones: which videos and channels get the most engagement, what those videos have in common, and how channels change over time.</p>
+        <p>The project tracks marketing content on YouTube. It searches 30 marketing keywords, such as <em>content marketing</em>, <em>youtube seo tips</em> and <em>tiktok marketing tips</em>, and collects data from five API endpoints: search results (including each video's position in YouTube search), video details, channel details, comments and video categories.</p>
+        <p>I built it to cover a complete analytics workflow on live API data: scheduled ingestion, raw storage, layered dbt models, tests, documentation and a dashboard at the end. The questions behind the dashboard are simple ones: which videos and channels get the most engagement, what those videos have in common, and how channels change over time.</p>
         <p>Most of the work is in the dbt layer. The dashboard is mainly there to show that the final tables are accurate and easy to query.</p>
       </div>
       <p class="status-note"><strong>Status: paused.</strong> I built the project in April 2026, and it ran on a weekly schedule on a Google Cloud free trial. The last successful run was on 3 June 2026. Once the trial ended, the storage bucket was no longer accessible, so I paused the schedule. The BigQuery tables and the dashboard still show data from that last run.</p>
@@ -136,7 +136,7 @@
         <li><strong>Build and test gold</strong>dbt builds the star schema and runs the gold tests. If anything fails along the way, GitHub sends an email alert.</li>
       </ol>
       <div class="prose" style="margin-top: 20px">
-        <p>Across the weekly schedule (19 April to 3 June 2026), 11 of 13 runs passed.</p>
+        <p>Between 19 April and 3 June 2026 the pipeline ran 13 times (8 on schedule and 5 started manually), and 11 of those runs passed.</p>
       </div>
     </section>
 
@@ -156,7 +156,7 @@
           <tbody>
             <tr><td>fct_video_performance</td><td>One row per video</td><td>Engagement rate, like-to-view and comment-to-view ratios, video age</td></tr>
             <tr><td>fct_comments</td><td>One row per comment</td><td>Has likes, has replies, was edited, comment age</td></tr>
-            <tr><td>fct_searches</td><td>Keyword + video + date</td><td>Search rank, rank change, daily keyword rank</td></tr>
+            <tr><td>fct_searches</td><td>Keyword + video + date</td><td>Position in YouTube search results, change in position, daily rank per keyword</td></tr>
             <tr><td>dim_channels</td><td>One row per channel version</td><td>Channel tier (Nano / Micro / Macro / Mega), average views per video, built from the snapshot</td></tr>
             <tr><td>dim_categories</td><td>One row per category</td><td>YouTube category names</td></tr>
             <tr><td>dim_dates</td><td>One row per day</td><td>Date spine from 2005 to 2030 with week, month, quarter and weekend flag</td></tr>
