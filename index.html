@@ -3,8 +3,25 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>[Your Name] · Analytics Engineer Portfolio</title>
-  <meta name="description" content="Data projects by [Your Name], analytics engineer. Plain-English project overviews, with full code on GitHub.">
+  <title>Khairul Ikhwan · Senior Data Associate | Analytics &amp; Data Engineering</title>
+  <meta name="description" content="Khairul Ikhwan, Senior Data Associate in Kuala Lumpur working in SQL, reporting and data quality, moving into analytics engineering and data engineering. Featured project: a YouTube analytics pipeline built with Python, dbt and BigQuery.">
+  <meta name="author" content="Khairul Ikhwan">
+  <link rel="canonical" href="https://mhdkerol.github.io/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mhdkerol.github.io/">
+  <meta property="og:title" content="Khairul Ikhwan · Analytics &amp; Data Engineering">
+  <meta property="og:description" content="Senior Data Associate moving into analytics engineering and data engineering. Projects built with Python, SQL, dbt and BigQuery.">
+  <meta property="og:image" content="https://mhdkerol.github.io/assets/img/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <meta name="theme-color" content="#0f1115">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -13,114 +30,248 @@
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 
-<div class="container">
-  <nav class="nav" aria-label="Main">
-    <a class="nav__brand" href="./">[Your Name]</a>
-    <div class="nav__links">
-      <a href="#about">About</a>
-      <a href="#skills">Tech stack</a>
-      <a href="#projects">Projects</a>
-      <a href="https://github.com/mhdkerol">GitHub ↗</a>
-    </div>
-  </nav>
+<header class="header">
+  <div class="container header__inner">
+    <a class="brand" href="#top">Khairul Ikhwan</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+      <svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-menu"></use></svg>
+    </button>
+    <nav class="nav" id="site-nav" aria-label="Main" data-spy>
+      <a class="nav__link" href="#about">About</a>
+      <a class="nav__link" href="#stack">Tech Stack</a>
+      <a class="nav__link" href="#projects">Projects</a>
+      <a class="nav__link" href="#contact">Contact</a>
+      <span class="nav__social">
+        <a class="icon-link" href="https://github.com/mhdkerol" target="_blank" rel="noopener" aria-label="GitHub (opens in a new tab)">
+          <svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-github"></use></svg>
+        </a>
+        <a class="icon-link" href="https://www.linkedin.com/in/mhdkhairul" target="_blank" rel="noopener" aria-label="LinkedIn (opens in a new tab)">
+          <svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-linkedin"></use></svg>
+        </a>
+      </span>
+    </nav>
+  </div>
+</header>
 
-  <main id="main">
-    <!-- 1. Background -->
-    <section class="hero" id="about">
-      <p class="hero__hello">Hi, I'm [Your Name]</p>
-      <h1>Analytics Engineer</h1>
-      <p class="hero__lead">[2–3 sentences about your background: where you're based, what you do now, how you got into data, and the kind of role you're looking for.]</p>
-      <p class="hero__lead">I build systems that collect data automatically, check it for errors, and organise it so a business can answer questions from a dashboard.</p>
+<main id="main">
+
+  <!-- Intro -->
+  <section class="hero" id="top">
+    <div class="container">
+      <p class="hero__role">Senior Data Associate&nbsp;|&nbsp;Analytics &amp; Data Engineering</p>
+      <h1 class="hero__name">Khairul Ikhwan</h1>
+      <p class="hero__lead">I work with data every day: writing SQL, building reports and dashboards, and checking that the numbers are right before anyone uses them. I'm now moving further into the engineering side, building pipelines and data models with Python, dbt and BigQuery.</p>
       <div class="btn-row">
-        <a class="btn" href="#cv">Download CV</a>
-        <a class="btn" href="#linkedin">LinkedIn ↗</a>
+        <a class="btn btn--primary" href="#projects">View my project</a>
+        <a class="btn" href="https://github.com/mhdkerol" target="_blank" rel="noopener">
+          <svg class="icon icon--sm" aria-hidden="true"><use href="assets/img/icons.svg#i-github"></use></svg>GitHub
+        </a>
+        <a class="btn" href="https://www.linkedin.com/in/mhdkhairul" target="_blank" rel="noopener">
+          <svg class="icon icon--sm" aria-hidden="true"><use href="assets/img/icons.svg#i-linkedin"></use></svg>LinkedIn
+        </a>
+        <!-- CV: once a resume PDF is added to assets/, uncomment this button and check the file name.
+        <a class="btn" href="assets/Khairul-Ikhwan-Resume.pdf" download>Download resume</a>
+        -->
       </div>
-    </section>
+      <p class="hero__meta">Kuala Lumpur, Malaysia</p>
+    </div>
+  </section>
 
-    <!-- 2. Tech stack -->
-    <section class="section" id="skills">
-      <h2 style="margin-bottom: 20px">Tech stack</h2>
+  <!-- About -->
+  <section class="section" id="about">
+    <div class="container about">
+      <div>
+        <p class="section__eyebrow">About</p>
+        <h2 class="section__title">From reporting to the data behind it</h2>
+        <div class="about__text">
+          <p>I've been working in data for about three years, first as a Data Analyst in online retail and now as a Senior Data Associate in B2B marketing.</p>
+          <p>Most of my work is SQL. I pull and process data, build reports and dashboards, and run the checks that keep them trustworthy: validating data, reconciling figures between sources, and automating the repetitive parts.</p>
+          <p>Over time I've found that the part I care about most comes before the dashboard: getting raw data into clean, well-modelled tables that people can rely on. That's where I'm taking my career, toward analytics engineering and data engineering.</p>
+          <p>Outside work I build projects to practise this end to end, from ingestion to modelling, testing and automation. The code is on GitHub.</p>
+        </div>
+      </div>
+      <aside class="about__side" aria-label="Experience and interests">
+        <div class="side-block">
+          <h3>Experience</h3>
+          <ul class="timeline">
+            <li><strong>Senior Data Associate</strong><span>B2B marketing · Jan 2025 – present</span></li>
+            <li><strong>Data Analyst</strong><span>Online retail · Sep 2023 – Nov 2024</span></li>
+          </ul>
+        </div>
+        <div class="side-block">
+          <h3>What I do at work</h3>
+          <ul class="plain-list">
+            <li>SQL and data extraction</li>
+            <li>Reporting and dashboard development</li>
+            <li>Data quality checks, validation and reconciliation</li>
+            <li>Data processing and automation</li>
+          </ul>
+        </div>
+        <div class="side-block">
+          <h3>Open to</h3>
+          <ul class="plain-list">
+            <li>Analytics Engineer and Data Engineer roles</li>
+            <li>Data Analyst roles focused on SQL, data transformation and modelling</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Tech stack -->
+  <section class="section" id="stack">
+    <div class="container">
+      <p class="section__eyebrow">Tech Stack</p>
+      <h2 class="section__title">Tools I work with</h2>
+      <p class="section__intro">What I use at work and in my own projects.</p>
+
       <div class="stack">
         <div class="stack__group">
-          <p class="label">Languages</p>
-          <div class="chips"><span class="chip">Python</span><span class="chip">SQL</span></div>
+          <h3>Languages</h3>
+          <ul class="stack__list">
+            <li class="stack__item"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-python"></use></svg>Python</li>
+            <li class="stack__item"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-sql"></use></svg>SQL</li>
+          </ul>
         </div>
         <div class="stack__group">
-          <p class="label">Data modelling</p>
-          <div class="chips"><span class="chip">dbt</span></div>
+          <h3>Analytics Engineering</h3>
+          <ul class="stack__list">
+            <li class="stack__item"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-dbt"></use></svg>dbt</li>
+            <li class="stack__item"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-model"></use></svg>Data Modelling</li>
+          </ul>
         </div>
         <div class="stack__group">
-          <p class="label">Cloud</p>
-          <div class="chips"><span class="chip">BigQuery</span><span class="chip">Google Cloud Storage</span></div>
+          <h3>Data Platform</h3>
+          <ul class="stack__list">
+            <li class="stack__item"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-googlebigquery"></use></svg>BigQuery</li>
+            <li class="stack__item"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-googlecloudstorage"></use></svg>Google Cloud Storage</li>
+          </ul>
         </div>
         <div class="stack__group">
-          <p class="label">Automation</p>
-          <div class="chips"><span class="chip">GitHub Actions</span><span class="chip">Git</span></div>
+          <h3>Automation</h3>
+          <ul class="stack__list">
+            <li class="stack__item"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-githubactions"></use></svg>GitHub Actions</li>
+          </ul>
         </div>
         <div class="stack__group">
-          <p class="label">Dashboards</p>
-          <div class="chips"><span class="chip">Looker Studio</span></div>
+          <h3>Version Control</h3>
+          <ul class="stack__list">
+            <li class="stack__item"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-git"></use></svg>Git</li>
+            <li class="stack__item"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-github"></use></svg>GitHub</li>
+          </ul>
+        </div>
+        <div class="stack__group">
+          <h3>BI &amp; Visualization</h3>
+          <ul class="stack__list">
+            <li class="stack__item"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-looker"></use></svg>Looker Studio</li>
+          </ul>
         </div>
       </div>
-    </section>
 
-    <!-- 3. Call to action -->
-    <section class="section" style="padding-top: 8px">
-      <a class="btn btn--primary btn--lg" href="#projects">See my projects ↓</a>
-    </section>
-
-    <!-- 4. Projects list -->
-    <section class="section" id="projects">
-      <div class="section__head">
-        <div>
-          <h2>Projects</h2>
-          <p class="note" style="margin-top: 6px">Tap a project for the full story. The code for each one is on GitHub.</p>
-        </div>
-        <div class="filters" role="group" aria-label="Filter projects">
-          <button class="filter" data-filter="all" aria-pressed="true">All</button>
-          <button class="filter" data-filter="data-engineering" aria-pressed="false">Data Engineering</button>
-          <button class="filter" data-filter="sql" aria-pressed="false">SQL</button>
-          <button class="filter" data-filter="python" aria-pressed="false">Python</button>
-        </div>
+      <div class="stack-ai">
+        <h3>AI Tools</h3>
+        <ul class="stack__list">
+          <li class="stack__item"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-claude"></use></svg>Claude</li>
+          <li class="stack__item"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-openai"></use></svg>ChatGPT</li>
+          <li class="stack__item"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-googlegemini"></use></svg>Gemini</li>
+        </ul>
+        <p>I use these as assistants for coding, debugging and learning new tools.</p>
       </div>
+    </div>
+  </section>
 
-      <div class="project-list">
-        <a class="project-item" href="projects/youtube-analytics.html" data-tags="data-engineering sql python">
-          <div class="project-item__body">
-            <h3>YouTube Marketing Analytics</h3>
-            <p>An automated weekly pipeline that collects YouTube marketing data, checks its quality and powers a performance dashboard.</p>
-            <div class="chips">
-              <span class="chip chip--accent">Data Engineering</span>
-              <span class="chip">Python</span>
-              <span class="chip">SQL</span>
-              <span class="chip">dbt</span>
-              <span class="chip">BigQuery</span>
+  <!-- Featured project -->
+  <section class="section" id="projects">
+    <div class="container">
+      <p class="section__eyebrow">Projects</p>
+      <h2 class="section__title">Featured project</h2>
+
+      <article class="feature" aria-labelledby="yt-title">
+        <div class="feature__body">
+          <div>
+            <p class="feature__tag">Data pipeline · Analytics engineering</p>
+            <h3 class="feature__title" id="yt-title">YouTube Marketing Analytics Pipeline</h3>
+            <p class="feature__desc">An automated pipeline that collects YouTube data on marketing content (videos, channels, comments and search rankings for 30 marketing keywords), stores the raw data in Google Cloud Storage, transforms it with dbt in BigQuery, and feeds a performance dashboard in Looker Studio.</p>
+            <ul class="feature__points">
+              <li>Ran weekly on GitHub Actions, from ingestion to tested tables</li>
+              <li>Bronze, silver and gold layers, ending in a star schema</li>
+              <li>Channel history kept with a dbt snapshot (SCD Type 2)</li>
+              <li>dbt tests and freshness checks run before the final tables are built</li>
+            </ul>
+            <ul class="tech-row" aria-label="Technologies used">
+              <li><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-python"></use></svg>Python</li>
+              <li><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-googlecloudstorage"></use></svg>Cloud Storage</li>
+              <li><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-googlebigquery"></use></svg>BigQuery</li>
+              <li><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-dbt"></use></svg>dbt</li>
+              <li><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-sql"></use></svg>SQL</li>
+              <li><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-githubactions"></use></svg>GitHub Actions</li>
+              <li><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-looker"></use></svg>Looker Studio</li>
+            </ul>
+            <div class="btn-row">
+              <a class="btn btn--primary" href="projects/youtube-analytics.html">
+                How it works<svg class="icon icon--sm" aria-hidden="true"><use href="assets/img/icons.svg#i-arrow"></use></svg>
+              </a>
+              <a class="btn" href="https://github.com/mhdkerol/youtube-analytics-API" target="_blank" rel="noopener">
+                <svg class="icon icon--sm" aria-hidden="true"><use href="assets/img/icons.svg#i-github"></use></svg>Repository
+              </a>
             </div>
           </div>
-          <span class="project-item__arrow" aria-hidden="true">→</span>
-        </a>
-
-        <div class="project-item project-item--soon" data-tags="data-engineering sql python">
-          <div class="project-item__body">
-            <p class="label label--amber">In progress</p>
-            <h3>Malaysia Cost of Living</h3>
+          <div class="feature__visual">
+            <figure class="shot">
+              <img src="assets/img/dashboard.png" width="893" height="856" loading="lazy"
+                   alt="Looker Studio dashboard, Market Landscape page: totals for videos tracked, channels and average engagement rate, with charts of the most watched channels, content categories by engagement and channel tiers.">
+            </figure>
+            <p class="shot-caption">Looker Studio dashboard, built on the gold tables.</p>
           </div>
-          <span class="note">Coming soon</span>
         </div>
+        <div class="feature__wide">
+          <h4>Architecture</h4>
+          <figure class="shot">
+            <img src="assets/img/architecture.png" width="1881" height="836" loading="lazy"
+                 alt="Architecture: the YouTube Data API is read by a Python ingestion script, raw files land in Google Cloud Storage and BigQuery bronze tables, dbt builds silver, snapshot and gold layers, and Looker Studio reads the gold layer. GitHub Actions runs the pipeline weekly.">
+          </figure>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section" id="contact">
+    <div class="container contact">
+      <div>
+        <p class="section__eyebrow">Contact</p>
+        <h2 class="section__title">Get in touch</h2>
+        <p class="section__intro">Email is the quickest way to reach me. I'm happy to talk about analytics engineering, data engineering or technical data analyst roles.</p>
       </div>
-    </section>
-  </main>
+      <ul class="contact__links">
+        <li><a href="mailto:mkikhwan.pro@gmail.com">
+          <svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-mail"></use></svg>
+          <span class="label">Email</span><span class="value">mkikhwan.pro@gmail.com</span>
+        </a></li>
+        <li><a href="https://www.linkedin.com/in/mhdkhairul" target="_blank" rel="noopener">
+          <svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-linkedin"></use></svg>
+          <span class="label">LinkedIn</span><span class="value">linkedin.com/in/mhdkhairul</span>
+        </a></li>
+        <li><a href="https://github.com/mhdkerol" target="_blank" rel="noopener">
+          <svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-github"></use></svg>
+          <span class="label">GitHub</span><span class="value">github.com/mhdkerol</span>
+        </a></li>
+      </ul>
+    </div>
+  </section>
+</main>
 
-  <footer class="footer">
-    <span>© <span id="year">2026</span> [Your Name]</span>
-    <nav aria-label="Contact">
-      <a href="https://github.com/mhdkerol">GitHub</a>
-      <a href="#linkedin">LinkedIn</a>
-      <a href="#email">Email</a>
+<footer class="footer">
+  <div class="container footer__inner">
+    <span>© <span id="year">2026</span> Khairul Ikhwan</span>
+    <nav aria-label="Footer">
+      <a href="https://github.com/mhdkerol" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/mhdkhairul" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:mkikhwan.pro@gmail.com">Email</a>
     </nav>
-  </footer>
-</div>
+  </div>
+</footer>
 
-<script src="assets/js/main.js"></script>
+<script src="assets/js/main.js" defer></script>
 </body>
 </html>

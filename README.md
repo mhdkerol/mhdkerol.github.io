@@ -1,24 +1,37 @@
 # mhdkerol.github.io
 
-My data portfolio website, hosted free on GitHub Pages: **https://mhdkerol.github.io**
+Personal portfolio of Khairul Ikhwan, hosted on GitHub Pages: **https://mhdkerol.github.io**
 
-The website gives plain-English overviews of each project (what it does, why it matters, how it works). The full code for each project lives in its own GitHub repo.
+Plain HTML, CSS and a little JavaScript. No framework and no build step.
 
 ## Structure
 
 ```
-index.html                       ← homepage: intro, projects, about, skills
-projects/youtube-analytics.html  ← full project story with code highlights
-assets/css/style.css             ← all styling
-assets/js/main.js                ← project filter buttons
-assets/img/                      ← diagrams and screenshots
+index.html                        homepage: intro, about, tech stack, featured project, contact
+projects/youtube-analytics.html   project detail page
+404.html                          not-found page
+assets/css/style.css              all styles
+assets/js/main.js                 mobile menu, active nav link, header border
+assets/img/icons.svg              technology logos (SVG sprite, from Simple Icons, CC0)
+assets/img/                       screenshots, diagrams and social preview image
+favicon.svg, favicon-32.png, apple-touch-icon.png
 ```
 
-## Adding a new project
+## Preview locally
 
-1. Copy the project card `<article class="card" ...>` in `index.html` and update the text. Set `data-tags` to the filters it belongs to (`data-engineering`, `sql`, `python`).
-2. Copy `projects/youtube-analytics.html` to `projects/<new-project>.html` and update it.
-3. Put images in `assets/img/`.
-4. Commit and push. The site updates in about a minute.
+```bash
+python3 -m http.server 8000
+# open http://localhost:8000
+```
 
-No build step: plain HTML, CSS and a little JavaScript.
+Opening `index.html` directly as a file also mostly works, but the logos load more reliably through a local server.
+
+## Deploy
+
+Push to the `main` branch. GitHub Pages (Settings → Pages → Deploy from a branch → `main` / root) publishes the site within a minute or two.
+
+## Common edits
+
+- **Add the resume:** put the PDF in `assets/` (e.g. `assets/Khairul-Ikhwan-Resume.pdf`) and uncomment the resume button in the hero section of `index.html`.
+- **Add a logo:** add a `<symbol id="i-name">` to `assets/img/icons.svg`, then use `<svg class="icon"><use href="assets/img/icons.svg#i-name"></use></svg>`.
+- **Add a project:** copy the `<article class="feature">` block in `index.html` and `projects/youtube-analytics.html` as a starting point.
