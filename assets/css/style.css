@@ -326,3 +326,4 @@ td:first-child { color: var(--text); white-space: nowrap; }
 }
 .availability span { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
 .project-status { margin: -8px 0 24px; font-size: 14px; color: #f0b429; }
+.stack-ai--next { margin-top: 28px; }
