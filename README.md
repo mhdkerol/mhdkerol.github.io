@@ -15,6 +15,7 @@ Senior Data Associate working across analytics and data engineering, based in Ku
 
 - Email: mkikhwan.pro@gmail.com
 - LinkedIn: [linkedin.com/in/mhdkhairul](https://www.linkedin.com/in/mhdkhairul)
+- Upwork: [Hire me for freelance work](https://www.upwork.com/freelancers/~019ff9cebfa9b17c10)
 - GitHub: [github.com/mhdkerol](https://github.com/mhdkerol)
 
 ---
