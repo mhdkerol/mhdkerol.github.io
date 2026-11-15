@@ -64,7 +64,8 @@ code { font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; 
 }
 .header.is-scrolled { border-bottom-color: var(--border); }
 .header__inner { height: var(--header-h); display: flex; align-items: center; justify-content: space-between; gap: 16px; }
-.brand { font-weight: 700; font-size: 17px; letter-spacing: -0.01em; }
+.brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; font-size: 17px; letter-spacing: -0.01em; }
+.brand__logo { flex: none; }
 
 .nav { display: flex; align-items: center; gap: 4px; }
 .nav__link {
